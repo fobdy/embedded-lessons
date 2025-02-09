@@ -10,7 +10,7 @@ int main(int argc, char const *argv[])
     for (int i = 0; i < 4; i++)
     {
         bool b = x & 1;
-        bool a = (x & (1 << 1)) >> 1;
+        bool a = (x >> 1) & 1;
         bool impl = !a || b;
         bool equal = (a && b) || (!a && !b);
 
