@@ -1,28 +1,23 @@
 #include <stdio.h>
-#include <stdint.h>
-#include <inttypes.h>
 
 int main(int argc, char const *argv[])
 {
-    uint8_t month = 0;
+    int a = 0;
+    int b = 0;
 
-    scanf("%" SCNu8, &month);
+    scanf("%d %d", &a, &b);
 
-    if (month >= 3 && month <= 5)
+    if (a > b)
     {
-        printf("spring"); // 3, 4, 5
+        printf("Above");
     }
-    else if (month >= 6 && month <= 8)
+    else if (a < b)
     {
-        printf("summer"); // 6, 7, 8
-    }
-    else if (month >= 9 && month <= 11)
-    {
-        printf("autumn"); // 9, 10, 11
+        printf("Less");
     }
     else
     {
-        printf("winter"); // 12, 1, 2
+        printf("Equal");
     }
 
     return 0;
