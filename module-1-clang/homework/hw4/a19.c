@@ -1,8 +1,7 @@
-#include <stdio.h>
 #include <stdbool.h>
+#include <stdio.h>
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
     int a = 0;
     int b = 0;
     int c = 0;
@@ -12,12 +11,9 @@ int main(int argc, char const *argv[])
     bool aboveZero = a > 0 && b > 0 && c > 0;
     bool twoSidesGreaterThanThirdOne = (a + b) > c && (b + c) > a && (a + c) > b;
 
-    if (aboveZero && twoSidesGreaterThanThirdOne)
-    {
+    if (aboveZero && twoSidesGreaterThanThirdOne) {
         printf("YES");
-    }
-    else
-    {
+    } else {
         printf("NO");
     }
 
