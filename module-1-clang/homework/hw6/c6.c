@@ -15,11 +15,12 @@ uint64_t power(int base, unsigned int exponent) {
 
 uint64_t geom_prog(unsigned int index) {
     const int b1 = 1;
+    const int q = 2;
 
-    return b1 * power(2, index - 1);
+    return b1 * power(q, index - 1);
 }
 
-int main(int argc, char const *argv[]) {
+int main() {
     int index = 0;
 
     scanf("%d", &index);
