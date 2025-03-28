@@ -2,3 +2,5 @@
 *.png
 .~lock.*
 bin
+input.txt
+output.txt
