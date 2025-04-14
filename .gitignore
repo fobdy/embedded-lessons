@@ -1,6 +1,10 @@
 .vscode
 *.png
+*.pdf
+*.docx
 .~lock.*
 bin
 input.txt
 output.txt
+*/coursework/coursework
+*.o
