@@ -113,7 +113,9 @@ void collect_and_print_stats(Vector *data, int8_t month) {
             year_s.sum += record->temp;
             year_s.count++;
         } else if (record->year == curr_year) {
-            print_month_stats_row(curr_month, &month_s);
+            if (month < 0 || (month > 0 && curr_month == month)) {
+                print_month_stats_row(curr_month, &month_s);
+            }
 
             month_s.min = record->temp;
             month_s.max = record->temp;
@@ -127,7 +129,9 @@ void collect_and_print_stats(Vector *data, int8_t month) {
 
             curr_month = record->month;
         } else {
-            print_month_stats_row(curr_month, &month_s);
+            if (month < 0 || (month > 0 && curr_month == month)) {
+                print_month_stats_row(curr_month, &month_s);
+            }
             print_year_stats_row(curr_year, &year_s);
             print_table_header();
 
@@ -146,6 +150,8 @@ void collect_and_print_stats(Vector *data, int8_t month) {
         }
     }
 
-    print_month_stats_row(curr_month, &month_s);
+    if (month < 0 || (month > 0 && curr_month == month)) {
+        print_month_stats_row(curr_month, &month_s);
+    }
     print_year_stats_row(curr_year, &year_s);
 }
