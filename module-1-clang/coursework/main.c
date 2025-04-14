@@ -32,15 +32,18 @@ int main(int argc, char *argv[]) {
     size_t len = 0;
     SensorData data;
     Vector *vec = vector_create(sizeof(SensorData), 1024);
+    uint32_t line_no = 0;
 
     while (readline(input_file, line, sizeof(line), &len)) {
+        line_no++;
+
         if (parse_csv_sensor_data(line, &data)) {
             if (!vector_push(vec, &data)) {
                 fprintf(stderr, "Error: No more memory to store such a big file data");
                 break;
             };
         } else {
-            fprintf(stderr, "Warning: failed to parse CSV line: %s\n", line);
+            fprintf(stderr, "Warning: failed to parse CSV line %d: %s\n", line_no, line);
         }
     }
 
